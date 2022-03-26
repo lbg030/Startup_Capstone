@@ -1,19 +1,13 @@
 const express = require("express");
 const app = express();
+
 const test = require("./Router/test");
-const config = require("./config/config.json")['development'];
-const {Pool} = require('pg');
+const board = require("./Router/board/data"); 
 
-const pg = new Pool(config);
-
-pg.connect(err => {
-  if(err) console.log(err);
-  else {
-    console.log("데이터베이스 연결 성공");
-  }
-})
+app.use(express.json());
 
 app.use("/api", test);
+app.use("/api/board",board);
 
 const port = 4000;
 app.listen(port, () => console.log(`${port}`));
