@@ -1,17 +1,16 @@
 import axios from "axios";
 import { useEffect } from "react";
 import "./App.css";
+import Login from "./components/LoginForm";
+import Test from "./components/Test";
 
 function App() {
-  const callApi = async () => {
-    axios.get("/api").then((res) => console.log(res.data.test));
-  };
-
-  useEffect(() => {
-    callApi();
-  }, []);
-
-  return <div>test</div>;
+  return (
+    <div>
+      <Login />
+      <Test />
+    </div>
+  );
 }
 
 export default App;
