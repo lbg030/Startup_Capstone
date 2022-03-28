@@ -1,8 +1,6 @@
-import axios from "axios";
-import { useEffect } from "react";
 import "./App.css";
-import Login from "./components/LoginForm";
-import Test from "./components/Test";
+import Login from "./components/이병권/LoginForm";
+import Test from "./components/이병권/Test";
 
 function App() {
   return (

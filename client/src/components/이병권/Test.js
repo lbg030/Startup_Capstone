@@ -10,6 +10,7 @@ function Test() {
     user_mobile: "",
     user_gender: "",
   });
+
   const getValue = (e) => {
     const { name, value } = e.target;
     setUserInfo({

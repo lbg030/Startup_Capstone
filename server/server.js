@@ -16,6 +16,7 @@ app.listen(PORT, () => {
   console.log(`Server run : http://localhost:${PORT}/`);
 });
 // Postgres client setup
+
 const { Pool } = require("pg");
 const pgClient = new Pool({
   user: "postgres",
