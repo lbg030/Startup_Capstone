@@ -6,23 +6,15 @@ import Axios from 'axios';
 function Posts() {
   const { boardseq,postseq } = useParams();
   const [posts, setPosts] = useState([]);
-  const [error, setError] = useState('');
-  const [loading, setloading] = useState(true);
   const getPosts = () => {
-      Axios.get(`http://localhost:4000/api/boards/${boardseq}/${postseq}`)
-      .then((res) => {
-        setPosts(res.data);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setloading(false);
-      });
+    Axios.get(`http://localhost:4000/api/boards/${boardseq}/${postseq}`)
+    .then((res) => {
+      setPosts(res.data);
+    })
   };
   useEffect(()=>{
     getPosts();
-  }, [loading])
+  }, [boardseq,postseq])
   return (
     <div className="Posts">
       {posts.map(element =>
