@@ -1,32 +1,12 @@
-import "./App.css";
-import React from 'react';
-import { NavLink, Link, Route, Routes } from 'react-router-dom';
-import Login from "./components/이병권/LoginForm";
-import Test from "./components/이병권/Test";
-import PostEditor from './components/sickbird/PostEditor';
-import Boards from './components/sickbird/Boards';
-import Posts from './components/sickbird/Posts';
+import React from "react";
+import Main from "./components/Main";
 
-function App() {
+function APP() {
   return (
-    <>
-      <div><Link to='/boards/2018045141/write'>게시글 작성</Link></div>
-      <div><Link to='/login'>로그인</Link></div>
-      <div><Link to='/register'>회원가입</Link></div>
-      <div><Link to ='/boards/2018045141'>sickbird 게시판</Link></div>
-      <div><Link to = '/boards/2018045141/1'>1</Link></div>
-      <div><Link to = '/boards/2018045141/2'>2</Link></div>
-      <div><Link to = '/boards/2018045141/3'>3</Link></div>
-      <div><Link to = '/boards/2018045141/4'>4</Link></div>
-      <Routes>
-        <Route path = "/boards/:boardseq/write" element = {<PostEditor />} />
-        <Route path = "/boards/:boardseq/" element = {<Boards />} />
-        <Route path = "/boards/:boardseq/:postseq" element = {<Posts />} />
-        <Route path = "/login" element = {<Login />} />
-        <Route path = "/register" element = {<Test />} />
-      </Routes>
-    </>
+    <div>
+      <Main />
+    </div>
   );
 }
 
-export default App;
+export default APP;

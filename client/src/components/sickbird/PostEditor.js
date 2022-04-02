@@ -3,10 +3,9 @@ import Axios from "axios";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Input, Button } from 'antd';
-import {useParams} from 'react-router-dom';
 
-function PostEditor() {
-  const { boardseq } = useParams();
+function PostEditor({match}) {
+  const { boardseq } = match.params;
 
   const [postContent, setPostContent] = useState({
     title: '',
