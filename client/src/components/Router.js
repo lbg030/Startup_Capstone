@@ -37,7 +37,7 @@ const AppRouter = ({ refreshUser, userObj }) => {
           </>
         )}
       </Switch>
-      <Route exact path = "/boards" component = {Boards} />
+      <Route exact path = "/boards/:boardseq" component = {Boards} />
       <Route exact path = "/boards/:boardseq/:postseq" component = {Posts} />
     </Router>
   );
