@@ -8,14 +8,19 @@
      <title>Momentum</title>
  </head>
  <body>
-     <div class="hello">
-         <h1>Click me!</h1><br>
-         <h2>Me Too</h2>
-     </div>
+     <form id="login-id-form" class="hidden">
+        <input required maxlength="15" type="text" placeholder="ID" />
+        <input id = "login-password-form" required maxlength="15" type="password" placeholder="Password"/>
+        <button>Log-in</button>
+     </form>
+     
+     <h1 id = "greeting" class="hidden"></h1>
 
-     <script src="app.js">
-     </script>
+     <form id="todo-form">
+         <input type="text" placeholder="Write a To Do and Press Enter" required/>
+     </form>
+     <script src="login.js"></script>
+     <script src="todo.js"></script>
 
-    
  </body>
  </html>
