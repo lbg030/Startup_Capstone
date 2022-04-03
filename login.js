@@ -2,6 +2,7 @@ const loginID_FORM = document.querySelector("#login-id-form");
 const logininput = document.querySelector("#login-id-form input");
 const loginPASSWORD_FORM = document.querySelector("#login-password-form");
 const loginafter = document.querySelector("#greeting")
+const todo_FORM = document.querySelector("#todo-form");
 
 const HIDDEN_CLASSNAME ="hidden";
 const USER_ID_KEY ="user_ID";
@@ -21,15 +22,16 @@ function loginsubmit(event){
     paintGreetings(user_ID);
     localStorage.setItem(USER_ID_KEY,user_ID);
     localStorage.setItem(USER_PASSWORD_KEY,user_password);
+    todo_FORM.classList.remove(HIDDEN_CLASSNAME);
 }
 
 
 if (savedUser_ID === null){
 loginID_FORM.classList.remove(HIDDEN_CLASSNAME);
 loginID_FORM.addEventListener("submit",loginsubmit);
-
 }
 else{
     paintGreetings(savedUser_ID);
+    todo_FORM.classList.remove(HIDDEN_CLASSNAME);
 }
 
