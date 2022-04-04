@@ -1,19 +1,17 @@
-import { useState } from 'react';
-import Axios from "axios";
+import React, { useState } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {dbService} from 'fbase';
 import { Input, Button } from 'antd';
 
-function PostEditor({match}) {
+/* 현재는 Game 게시판밖에 게시글 작성이 안되는 점 유의할 것*/
+
+function PostWrite({match}) {
   const { boardseq } = match.params;
 
-  const [postContent, setPostContent] = useState({
-    title: '',
-    content: '',
-    writer: 'sickbird'
-  });
+  const [postContent, setPostContent] = useState();
 
-  const getValue = e => {
+  const getTitle = e => {
     const { name, value } = e.target;
     setPostContent({
       ...postContent,
@@ -21,23 +19,30 @@ function PostEditor({match}) {
     })
     console.log(postContent);
   }
-
-  const writePost = () => {
-    Axios.post(`http://localhost:4000/api/boards/${boardseq}/write`, {
+  const getName = e => {
+    const { name, value } = e.target;
+    setPostContent({
+      ...postContent,
+      [name]: value
+    })
+    console.log(postContent);
+  }
+  const writePost = async () => {
+    const postRef = dbService.collection("boards").doc("game").collection("posts");
+    const snapshot = await postRef.add({
       title: postContent.title,
       content: postContent.content,
       writer: postContent.writer
-    }).then(() => {
-      alert("등록 완료!");
     });
   };
   return (
     <div className="PostEditor">
       <h2>게시글 작성</h2>
-      <div><Input showCount maxLength={100} onChange={getValue} /></div>
+      <div>제목 : <Input showCount maxLength={100} onChange={getTitle} /> </div>
+      <div>이름 : <Input showCount maxLength={20} onChange={getName} /> </div>
       <CKEditor
         editor={ ClassicEditor }
-        data="<p>Hello from CKEditor 5!</p>"
+        data=""
         onReady={ editor => {
           // You can store the "editor" and use when it is needed.
           console.log( 'Editor is ready to use!', editor );
@@ -65,4 +70,4 @@ function PostEditor({match}) {
     </div>
   );
 }
-export default PostEditor;
+export default PostWrite;

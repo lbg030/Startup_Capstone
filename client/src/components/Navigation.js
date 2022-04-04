@@ -16,6 +16,9 @@ const Navigation = ({ userObj }) => (
       <li>
         <Link to="/boards/2018045141">Game Board</Link>
       </li>
+      <li>
+        <Link to="/boards/2018045141/write">Game Board Post Write</Link>
+      </li>
     </ul>
   </nav>
 );

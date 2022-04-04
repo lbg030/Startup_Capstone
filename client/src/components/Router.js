@@ -11,6 +11,7 @@ import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 import Boards from "components/sickbird/Boards";
 import Posts from "components/sickbird/Posts";
+import PostWrite from "components/sickbird/PostWrite";
 
 const AppRouter = ({ refreshUser, userObj }) => {
   return (
@@ -39,6 +40,7 @@ const AppRouter = ({ refreshUser, userObj }) => {
       </Switch>
       <Route exact path = "/boards/:boardseq" component = {Boards} />
       <Route exact path = "/boards/:boardseq/:postseq" component = {Posts} />
+      <Route exact path = "/boards/:boardseq/write" component = {PostWrite} />
     </Router>
   );
 };
