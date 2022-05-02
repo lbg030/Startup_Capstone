@@ -11,9 +11,6 @@ const Navigation = ({ userObj }) => (
         <Link to="/profile">{userObj.displayName}'s Profile</Link>
       </li>
       <li>
-        <Link to="/boards/2018045141/1">Game Post Test</Link>
-      </li>
-      <li>
         <Link to="/boards/2018045141">Game Board</Link>
       </li>
       <li>

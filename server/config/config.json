@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "user_group",
-    "host": "127.0.0.1",
-    "dialect": "postgresql"
+    "user": "postgres",
+    "host": "localhost",
+    "database": "postgres",
+    "password": "1234",
+    "portnumber": 5432
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "user_group",
-    "host": "127.0.0.1",
-    "dialect": "postgresql"
+    "user": "postgres",
+    "host": "localhost",
+    "database": "postgres",
+    "password": "1234",
+    "portnumber": 5432
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "user_group",
-    "host": "127.0.0.1",
-    "dialect": "postgresql"
+    "user": "postgres",
+    "host": "localhost",
+    "database": "postgres",
+    "password": "1234",
+    "portnumber": 5432
   }
 }

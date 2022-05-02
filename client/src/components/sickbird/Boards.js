@@ -1,35 +1,26 @@
-import React,{ useEffect,useState } from 'react';
-import { dbService } from 'fbase';
-import { Timestamp } from "firebase/firestore"
+import React, { useEffect,useState } from 'react';
+import Posts from "components/sickbird/Posts";
+import Axios from 'axios';
+
 function Boards({match}) {
-  const { boardseq } = match.params;
+  const { boardseq,postseq } = match.params;
   const [posts, setPosts] = useState([]);
-  const getPosts = async () => {
-    const postRef = dbService.collection("boards").doc("game").collection("posts").orderBy("postseq");
-    const snapshot = await postRef.get();
-    const postList = [];
-    if (snapshot.empty) {
-      console.log('No matching documents.');
-      return;
-    }
-    snapshot.forEach(doc => {
-      postList.push(doc.data());
-    });
-    setPosts(postList);
+  const getPosts = () => {
+    Axios.get(`http://localhost:4000/api/boards/${boardseq}/`)
+    .then((res) => {
+      setPosts(res.data);
+    })
   };
   useEffect(()=>{
     getPosts();
-  }, [boardseq])
+  }, [boardseq,postseq])
   return (
     <div className="Boards">
       {posts.map(element =>
-        <div style={{ border: '1px solid #333' }}>
-          <h3>{element.title}</h3>
-          <h3>{element.writer}</h3> 
-          <h3>{JSON.stringify(element.created)}</h3>
-        </div>
+        <Posts postseq = {element.postseq} boardseq = {boardseq} title = {element.title} writer = {element.writer}/>
       )}
     </div>
   );
 }
+
 export default Boards;

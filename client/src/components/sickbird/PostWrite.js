@@ -1,48 +1,45 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
+import Axios from "axios";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import {dbService} from 'fbase';
 import { Input, Button } from 'antd';
 
-/* 현재는 Game 게시판밖에 게시글 작성이 안되는 점 유의할 것*/
-
-function PostWrite({match}) {
+function PostWrite({match, userObj}) {
   const { boardseq } = match.params;
+  const history = useHistory();
+  const [postContent, setPostContent] = useState({
+    title: '',
+    content: '<p>내용을 작성해주세요</p>',
+    writer: userObj.displayName
+  });
 
-  const [postContent, setPostContent] = useState();
-
-  const getTitle = e => {
-    const { name, value } = e.target;
+  const getValue = e => {
+    const { value } = e.target;
     setPostContent({
       ...postContent,
-      [name]: value
+      title: value
     })
     console.log(postContent);
   }
-  const getName = e => {
-    const { name, value } = e.target;
-    setPostContent({
-      ...postContent,
-      [name]: value
-    })
-    console.log(postContent);
-  }
-  const writePost = async () => {
-    const postRef = dbService.collection("boards").doc("game").collection("posts");
-    const snapshot = await postRef.add({
+
+  const writePost = () => {
+    Axios.post(`http://localhost:4000/api/boards/${boardseq}/write`, {
       title: postContent.title,
-      content: postContent.content,
-      writer: postContent.writer
+      writer: postContent.writer,
+      content: postContent.content
+    }).then(() => {
+      alert("등록 완료!");
+      history.push(`/boards/${boardseq}`);
     });
   };
   return (
-    <div className="PostEditor">
+    <div className="PostWrite">
       <h2>게시글 작성</h2>
-      <div>제목 : <Input showCount maxLength={100} onChange={getTitle} /> </div>
-      <div>이름 : <Input showCount maxLength={20} onChange={getName} /> </div>
+      <div><Input showCount maxLength={100} onChange={getValue} /></div>
       <CKEditor
         editor={ ClassicEditor }
-        data=""
+        data="<p>내용을 작성해주세요</p>"
         onReady={ editor => {
           // You can store the "editor" and use when it is needed.
           console.log( 'Editor is ready to use!', editor );
@@ -64,9 +61,7 @@ function PostWrite({match}) {
       />
       <Button
         type="primary" block 
-        onClick={writePost}
-        name='title'
-      >입력</Button>
+        onClick={writePost}>입력</Button>
     </div>
   );
 }
