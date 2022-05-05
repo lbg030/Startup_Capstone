@@ -11,10 +11,10 @@ const Navigation = ({ userObj }) => (
         <Link to="/profile">{userObj.displayName}'s Profile</Link>
       </li>
       <li>
-        <Link to="/boards/2018045141">Game Board</Link>
+        <Link to="/boards/2018045141">게시판</Link>
       </li>
       <li>
-        <Link to="/boards/2018045141/write">Game Board Post Write</Link>
+        <Link to="/boards/2018045141/write">게시글 작성</Link>
       </li>
     </ul>
   </nav>

@@ -26,7 +26,7 @@ router.get("/:boardseq/:postseq", async (req,res) => {
   // pg.query(query);
   const total = await pg.query(`select * from boards where boardseq = ${boardseq} and postseq = ${postseq}`);
   console.log(total.rows);
-  res.send(total.rows);
+  res.send(total.rows[0]);
 });
 
 /* 게시글 작성 */
@@ -47,8 +47,8 @@ router.post("/:boardseq/write", (req,res) => {
 /* 게시글 수정 */
 router.post("/:boardseq/:postseq/modify", (req,res) => {
   const {boardseq, postseq} = req.params; 
-  const {content} = req.body;
-  const query = new Query(`update boards set content = '${content}' where boardseq = ${boardseq} and postseq = ${postseq}`);
+  const {content, title} = req.body;
+  const query = new Query(`update boards set title = '${title}', content = '${content}' where boardseq = ${boardseq} and postseq = ${postseq}`);
   pg.query(query, (err, res) => {
     console.log(err,res);
     pg.end();
@@ -59,8 +59,9 @@ router.post("/:boardseq/:postseq/modify", (req,res) => {
 /* 게시글 삭제 */
 router.post("/:boardseq/:postseq/remove", (req,res) => {
   const {postseq} = req.params; 
-  const {id} = req.body;
-  const query = new Query(`delete from boards where postseq = ${postseq} and writer = '${id}'`);
+  const {writer} = req.body;
+  console.log("postseq: " + postseq + " " + "writer: " + writer);
+  const query = new Query(`delete from boards where postseq = ${postseq} and writer = '${writer}'`);
   pg.query(query, (err, res) => {
     console.log(err,res);
     pg.end();

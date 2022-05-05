@@ -61,7 +61,7 @@ function PostWrite({match, userObj}) {
       />
       <Button
         type="primary" block 
-        onClick={writePost}>입력</Button>
+        onClick={writePost}>작성하기</Button>
     </div>
   );
 }

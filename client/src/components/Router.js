@@ -12,6 +12,7 @@ import Navigation from "components/Navigation";
 import Boards from "components/sickbird/Boards";
 import PostView from "components/sickbird/PostView";
 import PostWrite from "components/sickbird/PostWrite";
+import PostModify from "components/sickbird/PostModify";
 
 const AppRouter = ({ refreshUser, userObj }) => {
   return (
@@ -42,7 +43,8 @@ const AppRouter = ({ refreshUser, userObj }) => {
           userObj ? (<Route exact path = "/boards/:boardseq/write" render = {(props) => <PostWrite userObj={userObj} {...props} />}/>) : (<div>로그인 하세요</div>)
         }
         <Route exact path = "/boards/:boardseq/" component = {Boards} />
-        <Route exact path = "/boards/:boardseq/:postseq" component = {PostView} />
+        <Route exact path = "/boards/:boardseq/:postseq/modify" render = {(props) => <PostModify userObj={userObj} {...props} />} />
+        <Route exact path = "/boards/:boardseq/:postseq" render = {(props) => <PostView userObj={userObj} {...props} />} />
       </Switch>
     </Router>
   );
