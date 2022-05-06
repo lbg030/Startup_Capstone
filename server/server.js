@@ -11,9 +11,11 @@ app.use(bodyParser.json());
 // server port 4000 할당
 // 클라이언트와 다른 번호로 충돌나지 않도록
 const PORT = 4000;
+var steem = require("steem");
 
-app.listen(PORT, () => {
-  console.log(`Server run : http://localhost:${PORT}/`);
+steem.api.getAccounts(["steemit", "dan"], function (err, result) {
+  console.log(result[0].name, result[0].balance, result[0].sbd_balance);
+  console.log(result[1].name, result[1].balance, result[1].sbd_balance);
 });
 // Postgres client setup
 
