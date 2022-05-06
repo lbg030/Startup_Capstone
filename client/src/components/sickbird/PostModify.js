@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom";
 import Axios from "axios";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { Input, Button } from 'antd';
+import { message, Input, Button } from 'antd';
+import 'antd/dist/antd.css';
 
 function PostModify({match, userObj}) {
   const { boardseq, postseq } = match.params;
@@ -29,7 +30,7 @@ function PostModify({match, userObj}) {
 
     }
     else if(postContent.writer != userObj.displayName){
-      alert("작성자가 아닙니다.");
+      message.warning("작성자가 아닙니다.");
       history.push(`/boards/${boardseq}/${postseq}`);
     }
   };
@@ -52,7 +53,7 @@ function PostModify({match, userObj}) {
       title: postContent.title,
       content: postContent.content
     }).then(() => {
-      alert("게시글 수정 완료!");
+      message.success("게시글 수정 완료!");
       history.push(`/boards/${boardseq}/${postseq}`);
     });
   };

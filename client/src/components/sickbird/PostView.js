@@ -2,7 +2,9 @@ import React, { useEffect,useState } from 'react';
 import HtmlReactParser from 'html-react-parser';
 import { useHistory } from "react-router-dom";
 import Axios from 'axios';
-import { Button } from 'antd';
+import CommentList from "components/sickbird/CommentList";
+import { message, Button } from 'antd';
+import 'antd/dist/antd.css';
 function PostView({match, userObj}) {
   const { boardseq,postseq } = match.params;
   const [posts, setPosts] = useState({
@@ -28,12 +30,12 @@ function PostView({match, userObj}) {
         writer: posts.writer
       })
       .then((res) => {
-        alert("게시글 삭제 완료");
+        message.success("게시글 삭제 완료");
         history.push(`/boards/${boardseq}`);
       });
     }
     else {
-      alert("작성자가 아닙니다.");
+      message.warning("작성자가 아닙니다.");
     }
   };
   useEffect(()=>{
@@ -54,6 +56,7 @@ function PostView({match, userObj}) {
             {HtmlReactParser(posts.content)}
           </div>
         </div>
+        <CommentList userObj = {userObj} boardseq = {boardseq} postseq = {postseq}/>
     </div>
   );
 }
