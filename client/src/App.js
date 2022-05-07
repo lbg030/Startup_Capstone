@@ -5,8 +5,8 @@ function APP() {
   const imagestyle = {
     height: "10vh",
     width: "10vh",
-    float: "left",
-    border: "1px solid white",
+    // float: "left",
+    // border: "1px solid white",
   };
 
   return (
@@ -27,13 +27,19 @@ function APP() {
               <section id="header" className="wrapper">
                 <div id="logo">
                   <h1>
-                    <a href="index.html">Escape Velocity</a>
+                    <img
+                      className="logo"
+                      alt="logo"
+                      src="images/로고.png"
+                      style={imagestyle}
+                    />
+                    <a href="index.html">스팀팩</a>
                   </h1>
-                  <p>A free responsive site template by HTML5 UP</p>
+                  <p>Steam Community Site</p>
                 </div>
 
                 <nav id="nav">
-                  <img
+                  {/* <img
                     className="logo"
                     alt="logo"
                     src="images/로고.png"
@@ -41,7 +47,7 @@ function APP() {
                   />
                   <a href="index.html" style={imagestyle}>
                     스팀팩
-                  </a>
+                  </a> */}
                   <ul>
                     <li className="current">
                       <a href="index.html">할인 정보</a>
@@ -53,7 +59,9 @@ function APP() {
                       <a href="left-sidebar.html">MBTI별 게임 추천</a>
                     </li>
                     <li>
-                      <a href="right-sidebar.html">Right Sidebar</a>
+                      <a href="right-sidebar.html">
+                        스팀 트렌드 [## 게임 랭킹 ]
+                      </a>
                     </li>
                     <li>
                       <a href="no-sidebar.html">No Sidebar</a>
