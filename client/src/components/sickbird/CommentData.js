@@ -10,21 +10,21 @@ function CommentData (props) {
     value: ''
   });
   
-  const commentChange = e => {
-    console.log(e.target.value);
-    setModified({
-      ...comment,
-      value: <p>{e.target.value}</p>
-    });
-  };
+  // const commentChange = e => {
+  //   console.log(e.target.value);
+  //   setModified({
+  //     ...comment,
+  //     value: <p>{e.target.value}</p>
+  //   });
+  // };
 
-  const commentModify = (seq) => {
-    console.log("seq: " + seq + " modifySeq: " + comment.modifySeq);
-    setModified({
-      ...comment,
-      modifySeq: seq
-    });
-  }
+  // const commentModify = (seq) => {
+  //   console.log("seq: " + seq + " modifySeq: " + comment.modifySeq);
+  //   setModified({
+  //     ...comment,
+  //     modifySeq: seq
+  //   });
+  // }
   return (
     <>
       <List
@@ -40,7 +40,7 @@ function CommentData (props) {
           //: 
           <Card size = "small">
             <Comment avatar = {<Avatar icon={<UserOutlined />} alt={item.writer} />} 
-            actions = {[<span key="comment-list-reply-to-0" onClick={commentModify(item.seq)}>수정</span>, <span key="comment-list-reply-to-0" onClick={commentModify(item.seq)}>삭제</span>]} {...item}>
+            actions = {[<span key="comment-list-reply-to-0">수정</span>, <span key="comment-list-reply-to-0">삭제</span>]} {...item}>
             </Comment>
           </Card>
         }
