@@ -9,6 +9,8 @@ function APP() {
     // border: "1px solid white",
   };
 
+  const st_date = new Date().toISOString().substr(0, 10).replace("T", " ");
+
   return (
     <div>
       <html>
@@ -39,39 +41,28 @@ function APP() {
                 </div>
 
                 <nav id="nav">
-                  {/* <img
-                    className="logo"
-                    alt="logo"
-                    src="images/로고.png"
-                    style={imagestyle}
-                  />
-                  <a href="index.html" style={imagestyle}>
-                    스팀팩
-                  </a> */}
                   <ul>
                     <li className="current">
-                      <a href="index.html">할인 정보</a>
+                      <a href="index.html">스팀팩</a>
                     </li>
                     <li>
-                      <a href="#">게시판</a>
+                      <a href="#">할인 정보</a>
                     </li>
                     <li>
-                      <a href="left-sidebar.html">MBTI별 게임 추천</a>
+                      <a href="left-sidebar.html">게시판</a>
                     </li>
                     <li>
-                      <a href="right-sidebar.html">
-                        스팀 트렌드 [## 게임 랭킹 ]
-                      </a>
+                      <a href="right-sidebar.html">MBTI별 게임 추천</a>
                     </li>
                     <li>
-                      <a href="no-sidebar.html">No Sidebar</a>
+                      <a href="no-sidebar.html">한글화 패치 파일</a>
                     </li>
                   </ul>
                 </nav>
               </section>
 
               <section id="intro" className="wrapper style1">
-                <div className="title">The Introduction</div>
+                <div className="title">{st_date} 인기게임</div>
                 <div className="container">
                   <p className="style1">
                     So in case you were wondering what this is all about ...
