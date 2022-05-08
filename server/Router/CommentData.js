@@ -12,7 +12,7 @@ pg.connect(err => {
   }
 });
 
-/* 댓글 불러오기 : 댓글 작성한 직후에 갱신이 바로 안되고 새로고침 해야 불러와짐 */
+/* 댓글 불러오기 */
 router.get("/:boardseq/:postseq", async (req,res) => {
   const client = await pg.connect();
   const {boardseq, postseq} = req.params; // Semantic URL을 이용하여 접근, params 사용

@@ -3,8 +3,7 @@ import HtmlReactParser from 'html-react-parser';
 import { useHistory } from "react-router-dom";
 import Axios from 'axios';
 import CommentList from "components/sickbird/CommentList";
-import { message, Button } from 'antd';
-import 'antd/dist/antd.css';
+import { message, Button, Divider, Card, Row, Col } from 'antd';
 function PostView({match, userObj}) {
   const { boardseq,postseq } = match.params;
   const [posts, setPosts] = useState({
@@ -22,7 +21,12 @@ function PostView({match, userObj}) {
     })
   };
   const modifyPost = () => {
-    history.push(`/boards/${boardseq}/${postseq}/modify`);
+    if(posts.writer !== userObj.displayName) {
+      message.warning("작성자가 아닙니다.");
+    }
+    else {
+      history.push(`/boards/${boardseq}/${postseq}/modify`);
+    }
   };
   const deletePost = () => {
     if(userObj.displayName === posts.writer){
@@ -42,22 +46,22 @@ function PostView({match, userObj}) {
     getPosts();
   }, [boardseq,postseq])
   return (
-    <div className="Posts">
-      <Button
-        type="primary" block 
-        onClick={modifyPost}>수정</Button>
-      <Button
-        type="primary" block 
-        onClick={deletePost}>삭제</Button>
-        <div style={{ border: '1px solid #333' }}>
-          <h2>{posts.title}</h2>
-          <h4>{posts.writer}</h4>
-          <div>
-            {HtmlReactParser(posts.content)}
-          </div>
+    <Card title={posts.title} extra={
+    <Row gutter={8}>
+      <Col className="gutter-row" span={12}><Button type="primary" block onClick={modifyPost}>수정</Button></Col>
+      <Col className="gutter-row" span={12}><Button type="primary" block onClick={deletePost}>삭제</Button></Col>
+    </Row>
+    } style={{width: '80%'}}>
+      <Divider plain />
+      <div>
+        <h4>{posts.writer}</h4>
+        <div>
+          {HtmlReactParser(posts.content)}
         </div>
-        <CommentList userObj = {userObj} boardseq = {boardseq} postseq = {postseq}/>
-    </div>
+      </div>
+      <Divider plain />
+      <CommentList userObj = {userObj} boardseq = {boardseq} postseq = {postseq}/>      
+    </Card>
   );
 }
 

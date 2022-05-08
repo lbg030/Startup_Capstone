@@ -4,7 +4,6 @@ import Axios from "axios";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { message, Input, Button } from 'antd';
-import 'antd/dist/antd.css';
 
 function PostModify({match, userObj}) {
   const { boardseq, postseq } = match.params;
@@ -16,7 +15,6 @@ function PostModify({match, userObj}) {
   });
   useEffect(()=>{
     getPosts();
-    getValue();
   }, [boardseq,postseq,postContent])
   const getPosts = () => {
     console.log(postContent.writer);
@@ -29,14 +27,14 @@ function PostModify({match, userObj}) {
       })
 
     }
-    else if(postContent.writer != userObj.displayName){
+    else if(postContent.writer !== userObj.displayName){
       message.warning("작성자가 아닙니다.");
       history.push(`/boards/${boardseq}/${postseq}`);
     }
   };
   const getValue = e => {
     try {
-      if(postContent.title !== null) {
+      if(postContent.title !== null && e.target !== undefined) {
         const { value } = e.target;
         setPostContent({
         ...postContent,
@@ -60,7 +58,7 @@ function PostModify({match, userObj}) {
   return (
     <div className="PostWrite">
       <h2>게시글 수정</h2>
-      <div><Input showCount maxLength={100} value = {postContent.title === null ? "": postContent.title} onChange={getValue} placeholder = "제목을 입력해주세요"/></div>
+      <div><Input showCount maxLength={100} value = {postContent.title === null ? "": postContent.title} onChange={getValue}/></div>
       <CKEditor
         editor={ ClassicEditor }
         data= {postContent.content}

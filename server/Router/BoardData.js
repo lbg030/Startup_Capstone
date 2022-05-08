@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const config = require("../config/config.json")['development'];
 const {Pool} = require('pg');
-const Query = require('pg').Query;
 const pg = new Pool(config);
 
 

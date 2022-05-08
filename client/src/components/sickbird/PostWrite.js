@@ -4,19 +4,19 @@ import Axios from "axios";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { message, Input, Button } from 'antd';
-import 'antd/dist/antd.css';
 
 function PostWrite({match, userObj}) {
   const { boardseq } = match.params;
   const history = useHistory();
   const [postContent, setPostContent] = useState({
     title: '',
-    content: '<p>내용을 작성해주세요</p>',
+    content: '',
     writer: userObj.displayName
   });
 
   const getValue = e => {
     const { value } = e.target;
+    if(value.maxLength > 100) return;
     setPostContent({
       ...postContent,
       title: value
@@ -37,10 +37,11 @@ function PostWrite({match, userObj}) {
   return (
     <div className="PostWrite">
       <h2>게시글 작성</h2>
-      <div><Input showCount maxLength={100} onChange={getValue} /></div>
+      <div><Input showCount placeholder="제목을 입력해주세요" maxLength={100} onChange={getValue} /></div>
       <CKEditor
         editor={ ClassicEditor }
-        data="<p>내용을 작성해주세요</p>"
+        data=""
+        config={{placeholder: "내용을 입력해주세요"}}
         onReady={ editor => {
           // You can store the "editor" and use when it is needed.
           console.log( 'Editor is ready to use!', editor );
