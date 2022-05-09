@@ -10,8 +10,9 @@ import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 import Boards from "components/sickbird/Boards";
-import Posts from "components/sickbird/Posts";
+import PostView from "components/sickbird/PostView";
 import PostWrite from "components/sickbird/PostWrite";
+import PostModify from "components/sickbird/PostModify";
 
 const AppRouter = ({ refreshUser, userObj }) => {
   return (
@@ -26,21 +27,25 @@ const AppRouter = ({ refreshUser, userObj }) => {
             <Route exact path="/profile">
               <Profile userObj={userObj} refreshUser={refreshUser} />
             </Route>
-
-            <Redirect from="*" to="/" />
+            
           </>
         ) : (
           <>
             <Route exact path="/">
               <Auth />
             </Route>
-            <Redirect from="*" to="/" />
+            
           </>
         )}
       </Switch>
-      <Route exact path = "/boards/:boardseq" component = {Boards} />
-      <Route exact path = "/boards/:boardseq/:postseq" component = {Posts} />
-      <Route exact path = "/boards/:boardseq/write" component = {PostWrite} />
+      <Switch>
+        {
+          userObj ? (<Route exact path = "/boards/:boardseq/write" render = {(props) => <PostWrite userObj={userObj} {...props} />}/>) : (<div>로그인 하세요</div>)
+        }
+        <Route exact path = "/boards/:boardseq/" component = {Boards} />
+        <Route exact path = "/boards/:boardseq/:postseq/modify" render = {(props) => <PostModify userObj={userObj} {...props} />} />
+        <Route exact path = "/boards/:boardseq/:postseq" render = {(props) => <PostView userObj={userObj} {...props} />} />
+      </Switch>
     </Router>
   );
 };
