@@ -19,7 +19,7 @@ import Footer from './components/Footer';
 
 function APP() {
   return (
-    <Router>
+    <html>
       <head>
         <title>SteamPack</title>
         <meta charSet="utf-8" />
@@ -33,17 +33,18 @@ function APP() {
         <div id="root">
           <div id="page-wrapper">
             <Header />
+            {<Highlihgts />} 
             <Intro />
             <Switch>
               {/* {
               userObj ? (<Route exact path = "/boards/:boardseq/write" render = {(props) => <PostWrite userObj={userObj} {...props} />}/>) : (<div>로그인 하세요</div>)
               } */}
+              <Route exact path = "/boards/:boardseq/write" render = {(props) => <PostWrite userObj="sickbird" {...props} />} />
               <Route exact path = "/boards/:boardseq/" component = {Boards} />
               <Route exact path = "/boards/:boardseq/:postseq/modify" render = {(props) => <PostModify userObj="sickbird" {...props} />} />
               <Route exact path = "/boards/:boardseq/:postseq" render = {(props) => <PostView userObj="sickbird" {...props} />} />
               <Route exact path = "/" component = {MainContent} />
             </Switch>
-            <Highlihgts />
             <Footer />
           </div>
           <script src="assets/js/jquery.min.js"></script>
@@ -54,7 +55,7 @@ function APP() {
           <script src="assets/js/main.js"></script>
         </div>
       </body>
-    </Router>
+    </html>
   );
 }
 

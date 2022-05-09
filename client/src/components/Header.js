@@ -43,7 +43,7 @@ const Header = () => (
             </a>
           </li>
           <li>
-            <a href="no-sidebar.html">No Sidebar</a>
+            <Link to="/boards/2018045141/write">게시글 작성</Link>
           </li>
         </ul>
         {/* <img
