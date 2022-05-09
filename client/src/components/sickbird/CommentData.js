@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import { Comment, Avatar, List, Card, Button } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import 'antd/dist/antd.css';
 import CommentEditor from "components/sickbird/CommentEditor";
 
 function CommentData (props) {

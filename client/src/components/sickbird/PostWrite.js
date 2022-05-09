@@ -4,6 +4,7 @@ import Axios from "axios";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { message, Input, Button } from 'antd';
+import 'antd/dist/antd.css';
 
 function PostWrite({match, userObj}) {
   const { boardseq } = match.params;

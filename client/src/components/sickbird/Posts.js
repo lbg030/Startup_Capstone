@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import 'antd/dist/antd.css';
 
 function Posts(props) {
   const { boardseq, postseq, title, writer} = props;

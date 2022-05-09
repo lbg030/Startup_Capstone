@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import Axios from 'axios';
 import { Form, Button, Input } from 'antd';
+import 'antd/dist/antd.css';
 const { TextArea } = Input;
 
 function CommentEditor(props){

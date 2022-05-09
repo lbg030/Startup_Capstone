@@ -5,6 +5,7 @@ import { UserOutlined } from '@ant-design/icons';
 import CommentData from "components/sickbird/CommentData";
 import CommentEditor from "components/sickbird/CommentEditor";
 import moment from 'moment';
+import 'antd/dist/antd.css';
 const { TextArea } = Input;
 
 function CommentList({userObj, boardseq, postseq}) {

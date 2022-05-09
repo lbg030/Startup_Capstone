@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Axios from 'axios';
 import CommentList from "components/sickbird/CommentList";
 import { message, Button, Divider, Card, Row, Col } from 'antd';
+import 'antd/dist/antd.css';
 function PostView({match, userObj}) {
   const { boardseq,postseq } = match.params;
   const [posts, setPosts] = useState({

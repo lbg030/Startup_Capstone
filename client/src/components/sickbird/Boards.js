@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react';
 import { List, Card } from 'antd';
 import Posts from "components/sickbird/Posts";
 import Axios from 'axios';
+import 'antd/dist/antd.css';
 
 function Boards({match}) {
   const { boardseq,postseq } = match.params;
@@ -32,5 +33,4 @@ function Boards({match}) {
     </>
   );
 }
-
 export default Boards;
