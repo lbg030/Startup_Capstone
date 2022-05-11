@@ -1,5 +1,6 @@
 import React from "react";
 
+import '../assets/css/main.css';
 const Highlights = () => (
   <section id="highlights" className="wrapper style3">
     <div className="title">할인 정보</div>

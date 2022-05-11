@@ -10,22 +10,7 @@ function CommentData (props) {
     modifySeq: 0,
     value: ''
   });
-  
-  // const commentChange = e => {
-  //   console.log(e.target.value);
-  //   setModified({
-  //     ...comment,
-  //     value: <p>{e.target.value}</p>
-  //   });
-  // };
 
-  // const commentModify = (seq) => {
-  //   console.log("seq: " + seq + " modifySeq: " + comment.modifySeq);
-  //   setModified({
-  //     ...comment,
-  //     modifySeq: seq
-  //   });
-  // }
   return (
     <>
       <List
@@ -33,12 +18,6 @@ function CommentData (props) {
         header={`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`}
         itemLayout="horizontal"
         renderItem={item =>
-          //item.seq === modifySeq ? 
-          // <CommentEditor
-          //   onChange={console.log(item.content.props.children)}
-          //   submitting={item.submitting}
-          //   value={item.content.props.children}/>
-          //: 
           <Card size = "small">
             <Comment avatar = {<Avatar icon={<UserOutlined />} alt={item.writer} />} 
             actions = {[<span key="comment-list-reply-to-0">수정</span>, <span key="comment-list-reply-to-0">삭제</span>]} {...item}>

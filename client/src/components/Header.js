@@ -6,6 +6,7 @@ import {
   Redirect,
   Link
 } from "react-router-dom";
+import '../assets/css/main.css';
 const imagestyle = {
   height: "10vh",
   width: "10vh",
@@ -56,12 +57,6 @@ const Header = () => (
           스팀팩
         </a> */}
       </nav>
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.dropotron.min.js"></script>
-      <script src="assets/js/browser.min.js"></script>
-      <script src="assets/js/breakpoints.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <script src="assets/js/main.js"></script>
     </section>
 );
 
