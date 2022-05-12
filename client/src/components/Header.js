@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import '../assets/css/main.css';
+import logoPath from '../images/로고.png';
 const imagestyle = {
   height: "10vh",
   width: "10vh",
@@ -20,7 +21,7 @@ const Header = () => (
           <img
             className="logo"
             alt="logo"
-            src="images/로고.png"
+            src={logoPath}
             style={imagestyle}
           />
           <a href="index.html">스팀팩 </a>
@@ -30,13 +31,13 @@ const Header = () => (
       <nav id="nav">
         <ul>
           <li className="current">
-            <a href="index.html">할인 정보</a>
+            <Link to="/">메인</Link>
           </li>
           <li>
             <Link to="/boards/2018045141">게시판</Link>
           </li>
           <li>
-            <a href="left-sidebar.html">MBTI별 게임 추천</a>
+          <Link to="/mbti">MBTI별 게임 추천</Link>
           </li>
           <li>
             <a href="right-sidebar.html">

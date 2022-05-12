@@ -31,7 +31,7 @@ function PostWrite({match, userObj}) {
       writer: postContent.writer,
       content: postContent.content
     }).then(() => {
-      message.success("등록 완료!");
+      alert("등록 완료!");
       history.push(`/boards/${boardseq}`);
     });
   };

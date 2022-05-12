@@ -3,7 +3,7 @@ import HtmlReactParser from 'html-react-parser';
 import { useHistory } from "react-router-dom";
 import Axios from 'axios';
 import CommentList from "components/sickbird/CommentList";
-import { message, Button, Divider, Card, Row, Col } from 'antd';
+import { message, Button, Divider, Card, Row, Col, PageHeader } from 'antd';
 import 'antd/dist/antd.css';
 function PostView({match, userObj}) {
   const { boardseq,postseq } = match.params;
@@ -23,7 +23,7 @@ function PostView({match, userObj}) {
   };
   const modifyPost = () => {
     if(posts.writer !== userObj.displayName) {
-      message.warning("작성자가 아닙니다.");
+      alert("작성자가 아닙니다.");
     }
     else {
       history.push(`/boards/${boardseq}/${postseq}/modify`);
@@ -35,12 +35,12 @@ function PostView({match, userObj}) {
         writer: posts.writer
       })
       .then((res) => {
-        message.success("게시글 삭제 완료");
+        alert("게시글 삭제 완료");
         history.push(`/boards/${boardseq}`);
       });
     }
     else {
-      message.warning("작성자가 아닙니다.");
+      alert("작성자가 아닙니다.");
     }
   };
   useEffect(()=>{
@@ -48,21 +48,23 @@ function PostView({match, userObj}) {
   }, [boardseq,postseq])
   return (
     <Row justify="center">
-      <Card title={posts.title} extra={
+      <Card title = {
+        <PageHeader
+          className="site-page-header"
+          title={posts.title}
+          subTitle={posts.writer}
+        />} extra={
         <Row gutter={8}>
           <Col className="gutter-row" span={12}><Button type="primary" block onClick={modifyPost}>수정</Button></Col>
           <Col className="gutter-row" span={12}><Button type="primary" block onClick={deletePost}>삭제</Button></Col>
         </Row>
-        } style={{width: '80%'}}>
-        <Divider plain />
-        <div>
-          <h4>{posts.writer}</h4>
+        } style={{width: '85%'}}>
+        <Card bordered = {false}>
           <div>
             {HtmlReactParser(posts.content)}
           </div>
-        </div>
-        <Divider plain />
-        <CommentList userObj = {userObj} boardseq = {boardseq} postseq = {postseq}/>      
+          <CommentList userObj = {userObj} boardseq = {boardseq} postseq = {postseq}/> 
+        </Card>     
       </Card>
     </Row>
   );

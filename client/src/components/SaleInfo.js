@@ -1,7 +1,7 @@
 import React from "react";
 
 import '../assets/css/main.css';
-const Highlights = () => (
+const SaleInfo = () => (
   <section id="highlights" className="wrapper style3">
     <div className="title">할인 정보</div>
     <div className="container">
@@ -9,7 +9,7 @@ const Highlights = () => (
         <div className="col-4 col-8-medium">
           <section className="highlight">
             <a href="https://store.steampowered.com/app/367520/Hollow_Knight/" className="image featured" target='_blank'>
-              <img src="images/hollow.jpg" alt="" />
+              <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg?t=1625363925" alt=""/>
             </a>
             <h3>
               <a href="https://store.steampowered.com/app/367520/Hollow_Knight/" target='_blank'>Hollow Knight</a>
@@ -29,7 +29,7 @@ const Highlights = () => (
         <div className="col-4 col-8-medium">
           <section className="highlight">
             <a href="https://store.steampowered.com/app/1253920/Rogue_Legacy_2/" className="image featured" target='_blank'>
-              <img src="images/rogue.jpg" alt="" />
+              <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1253920/header.jpg?t=1652116054" alt="" />
             </a>
             <h3>
               <a href="https://store.steampowered.com/app/1253920/Rogue_Legacy_2/" target='_blank'>Rogue Legacy 2</a>
@@ -49,7 +49,7 @@ const Highlights = () => (
         <div className="col-4 col-8-medium">
           <section className="highlight">
             <a href="https://store.steampowered.com/app/1446780/MONSTER_HUNTER_RISE/" className="image featured" target='_blank'>
-              <img src="images/monster.jpg" alt="" />
+              <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1446780/header.jpg?t=1652190664" alt="" />
             </a>
             <h3>
               <a href="https://store.steampowered.com/app/1446780/MONSTER_HUNTER_RISE/" target='_blank'>Monster Hunter Rise</a>
@@ -69,7 +69,7 @@ const Highlights = () => (
         <div className="col-4 col-8-medium">
           <section className="highlight">
             <a href="https://store.steampowered.com/app/646570/Slay_the_Spire/" className="image featured" target='_blank'>
-              <img src="images/slay.jpg" alt="" />
+              <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/646570/header.jpg?t=1592339399" alt="" />
             </a>
             <h3>
               <a href="https://store.steampowered.com/app/646570/Slay_the_Spire/" target='_blank'>Slay the Spire</a>
@@ -89,7 +89,7 @@ const Highlights = () => (
         <div className="col-4 col-8-medium">
           <section className="highlight">
             <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/" className="image featured" target='_blank'>
-              <img src="images/red.jpg" alt="" />
+              <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg?t=1618851907" alt="" />
             </a>
             <h3>
               <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/" target='_blank'>Red Dead Redemption 2</a>
@@ -109,7 +109,7 @@ const Highlights = () => (
         <div className="col-4 col-8-medium">
           <section className="highlight">
             <a href="https://store.steampowered.com/app/1296610/Peglin/" className="image featured" target='_blank'>
-              <img src="images/peglin.jpg" alt="" />
+              <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1296610/header.jpg?t=1651802907" alt="" />
             </a>
             <h3>
               <a href="https://store.steampowered.com/app/1296610/Peglin/" target='_blank'>Peglin</a>
@@ -131,4 +131,4 @@ const Highlights = () => (
   </section>
 );
 
-export default Highlights;
+export default SaleInfo;
