@@ -33,11 +33,12 @@ function APP() {
         <div id="root">
           <div id="page-wrapper">
             <Header />
-            <Intro />
+            {/* <Intro /> */}
             <Switch>
               {/* {
               userObj ? (<Route exact path = "/boards/:boardseq/write" render = {(props) => <PostWrite userObj={userObj} {...props} />}/>) : (<div>로그인 하세요</div>)
               } */}
+              <Route exact path = "/boards/:boardseq/write" component = {PostWrite} />
               <Route exact path = "/boards/:boardseq/" component = {Boards} />
               <Route exact path = "/boards/:boardseq/:postseq/modify" render = {(props) => <PostModify userObj="sickbird" {...props} />} />
               <Route exact path = "/boards/:boardseq/:postseq" render = {(props) => <PostView userObj="sickbird" {...props} />} />

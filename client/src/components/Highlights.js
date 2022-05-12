@@ -14,9 +14,7 @@ const Highlights = () => (
               <a href="#">배틀 그라운드</a>
             </h3>
             <p>
-              Eget mattis at, laoreet vel amet sed velit aliquam
-              diam ante, dolor aliquet sit amet vulputate mattis
-              amet laoreet lorem.
+            ₩25,000 -{'>'}  ₩2,000
             </p>
             <ul className="actions">
               <li>
@@ -37,9 +35,7 @@ const Highlights = () => (
               <a href="#">에이펙스레전드</a>
             </h3>
             <p>
-              Eget mattis at, laoreet vel amet sed velit aliquam
-              diam ante, dolor aliquet sit amet vulputate mattis
-              amet laoreet lorem.
+            ₩3,0000 -{'>'}  ₩1,700
             </p>
             <ul className="actions">
               <li>
