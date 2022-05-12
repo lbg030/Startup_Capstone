@@ -43,7 +43,7 @@ const Header = () => (
             </a>
           </li>
           <li>
-            <a href="no-sidebar.html">No Sidebar</a>
+            <a href="no-sidebar.html">## 채우거나 지우기 </a>
           </li>
         </ul>
         {/* <img
