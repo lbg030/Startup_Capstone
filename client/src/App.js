@@ -11,7 +11,7 @@ import Boards from "components/sickbird/Boards";
 import PostView from "components/sickbird/PostView";
 import PostWrite from "components/sickbird/PostWrite";
 import PostModify from "components/sickbird/PostModify";
-import Highlihgts from "components/Highlights";
+import Highlights from "components/Highlights";
 import MainContent from './components/MainContent';
 import Intro from './components/Intro';
 import Header from './components/Header';
@@ -33,18 +33,20 @@ function APP() {
         <div id="root">
           <div id="page-wrapper">
             <Header />
-            {/* <Intro /> */}
+            <Highlights />
+            <Route exact path = "/" component = {Highlights} />
+            <Route exact path = "/" component = {Intro} />
             <Switch>
+              
               {/* {
               userObj ? (<Route exact path = "/boards/:boardseq/write" render = {(props) => <PostWrite userObj={userObj} {...props} />}/>) : (<div>로그인 하세요</div>)
               } */}
-              <Route exact path = "/boards/:boardseq/write" component = {PostWrite} />
-              <Route exact path = "/boards/:boardseq/" component = {Boards} />
-              <Route exact path = "/boards/:boardseq/:postseq/modify" render = {(props) => <PostModify userObj="sickbird" {...props} />} />
-              <Route exact path = "/boards/:boardseq/:postseq" render = {(props) => <PostView userObj="sickbird" {...props} />} />
+              <Route exact path = "/:boardseq/write" render = {(props) => <PostWrite userObj="sickbird" {...props} />} />
+              <Route exact path = "/:boardseq/" component = {Boards} />
+              <Route exact path = "/:boardseq/:postseq/modify" render = {(props) => <PostModify userObj="sickbird" {...props} />} />
+              <Route exact path = "/:boardseq/:postseq" render = {(props) => <PostView userObj="sickbird" {...props} />} />
               <Route exact path = "/" component = {MainContent} />
             </Switch>
-            <Highlihgts />
             <Footer />
           </div>
           <script src="assets/js/jquery.min.js"></script>

@@ -44,7 +44,7 @@ const Header = () => (
             <a href="index.html">할인 정보</a>
           </li>
           <li>
-            <Link to="/boards/2018045141">게시판</Link>
+            <Link to="/2018045141">게시판</Link>
           </li>
           <li>
             <a href="recommendMBTI.html">MBTI별 게임 추천</a>
