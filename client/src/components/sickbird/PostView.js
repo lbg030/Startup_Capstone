@@ -47,22 +47,24 @@ function PostView({match, userObj}) {
     getPosts();
   }, [boardseq,postseq])
   return (
-    <Card title={posts.title} extra={
-    <Row gutter={8}>
-      <Col className="gutter-row" span={12}><Button type="primary" block onClick={modifyPost}>수정</Button></Col>
-      <Col className="gutter-row" span={12}><Button type="primary" block onClick={deletePost}>삭제</Button></Col>
-    </Row>
-    } style={{width: '80%'}}>
-      <Divider plain />
-      <div>
-        <h4>{posts.writer}</h4>
+    <Row justify="center">
+      <Card title={posts.title} extra={
+        <Row gutter={8}>
+          <Col className="gutter-row" span={12}><Button type="primary" block onClick={modifyPost}>수정</Button></Col>
+          <Col className="gutter-row" span={12}><Button type="primary" block onClick={deletePost}>삭제</Button></Col>
+        </Row>
+        } style={{width: '80%'}}>
+        <Divider plain />
         <div>
-          {HtmlReactParser(posts.content)}
+          <h4>{posts.writer}</h4>
+          <div>
+            {HtmlReactParser(posts.content)}
+          </div>
         </div>
-      </div>
-      <Divider plain />
-      <CommentList userObj = {userObj} boardseq = {boardseq} postseq = {postseq}/>      
-    </Card>
+        <Divider plain />
+        <CommentList userObj = {userObj} boardseq = {boardseq} postseq = {postseq}/>      
+      </Card>
+    </Row>
   );
 }
 
