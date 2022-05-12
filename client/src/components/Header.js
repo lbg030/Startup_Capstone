@@ -23,7 +23,7 @@ const Header = () => (
             src="images/로고.png"
             style={imagestyle}
           />
-          <Link to="/">스팀팩</Link>
+          <a href="index.html">스팀팩 </a>
         </h1>
         <p>Steam Community Site</p>
       </div>
@@ -44,7 +44,7 @@ const Header = () => (
             </a>
           </li>
           <li>
-            <Link to="/boards/2018045141/write">게시글 작성</Link>
+            <a href="no-sidebar.html">## 채우거나 지우기 </a>
           </li>
         </ul>
         {/* <img
