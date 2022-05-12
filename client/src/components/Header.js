@@ -22,7 +22,7 @@ const Header = () => (
             src="images/로고.png"
             style={imagestyle}
           />
-          <Link to="/">스팀팩</Link>
+          <a href="index.html">스팀팩 </a>
         </h1>
         <p>Steam Community Site</p>
       </div>
