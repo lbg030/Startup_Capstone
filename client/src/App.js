@@ -2,21 +2,19 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect,
-  Link
+  Switch
 } from "react-router-dom";
-import Main from "./components/Main";
-import Boards from "components/sickbird/Boards";
-import PostView from "components/sickbird/PostView";
-import PostWrite from "components/sickbird/PostWrite";
-import PostModify from "components/sickbird/PostModify";
+import Boards from "components/BoardComponent/Boards";
+import PostView from "components/BoardComponent/PostView";
+import PostWrite from "components/BoardComponent/PostWrite";
+import PostModify from "components/BoardComponent/PostModify";
 import SaleInfo from "components/SaleInfo";
 import MainContent from './components/MainContent';
 import Intro from './components/Intro';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Mbti from './components/Mbti';
+import MbtiStart from './components/MbtiComponent/MbtiStart';
+import MbtiTest from './components/MbtiComponent/MbtiTest';
 //import './assets/css/main.css';
 function APP() {
   return (
@@ -42,9 +40,9 @@ function APP() {
               <Route exact path = "/boards/:boardseq/" component = {Boards} />
               <Route exact path = "/boards/:boardseq/:postseq/modify" render = {(props) => <PostModify userObj={{displayName : "sickbird"}} {...props} />} />
               <Route exact path = "/boards/:boardseq/:postseq" render = {(props) => <PostView userObj={{displayName : "sickbird"}} {...props} />} />
-              <Route exact path = "/mbti" component = {Mbti} />
+              <Route exact path = "/mbti/test" component = {MbtiTest} />
+              <Route exact path = "/mbti" component = {MbtiStart} />
               <Route exact path = "/" component = {MainContent} />
-              <Redirect path="*" to="/" />
             </Switch>
             <Footer />
           </div>

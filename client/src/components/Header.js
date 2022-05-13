@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-  Link
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 import '../assets/css/main.css';
-import logoPath from '../images/로고.png';
 const imagestyle = {
   height: "10vh",
   width: "10vh",
@@ -21,7 +14,7 @@ const Header = () => (
           <img
             className="logo"
             alt="logo"
-            src={logoPath}
+            src="/images/로고.png"
             style={imagestyle}
           />
           <a href="index.html">스팀팩 </a>
@@ -48,15 +41,6 @@ const Header = () => (
             <a href="no-sidebar.html">## 채우거나 지우기 </a>
           </li>
         </ul>
-        {/* <img
-          className="logo"
-          alt="logo"
-          src="images/로고.png"
-          style={imagestyle}
-        />
-        <a href="index.html" style={imagestyle}>
-          스팀팩
-        </a> */}
       </nav>
     </section>
 );
