@@ -3,16 +3,15 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
 } from "react-router-dom";
 import Auth from "routes/Auth";
 import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
-import Boards from "components/sickbird/Boards";
-import PostView from "components/sickbird/PostView";
-import PostWrite from "components/sickbird/PostWrite";
-import PostModify from "components/sickbird/PostModify";
+import Boards from "components/BoardComponent/Boards";
+import PostView from "components/BoardComponent/PostView";
+import PostWrite from "components/BoardComponent/PostWrite";
+import PostModify from "components/BoardComponent/PostModify";
 
 const AppRouter = ({ refreshUser, userObj }) => {
   return (
@@ -27,7 +26,6 @@ const AppRouter = ({ refreshUser, userObj }) => {
             <Route exact path="/profile">
               <Profile userObj={userObj} refreshUser={refreshUser} />
             </Route>
-            
           </>
         ) : (
           <>

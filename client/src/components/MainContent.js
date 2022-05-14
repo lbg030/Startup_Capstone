@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../assets/css/main.css';
 const MainContent = () => (
   <section id="main" className="wrapper style2">
     <div className="title">The Details</div>
@@ -102,12 +102,6 @@ const MainContent = () => (
         </ul>
       </section>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
   </section>
 );
 

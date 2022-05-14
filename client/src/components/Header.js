@@ -1,11 +1,7 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-  Link
-} from "react-router-dom";
+import {Link} from "react-router-dom";
+import '../assets/css/main.css';
+import logoPath from '../images/로고.png' 
 const imagestyle = {
   height: "10vh",
   width: "10vh",
@@ -21,7 +17,7 @@ const Header = () => (
           <img
             className="logo"
             alt="logo"
-            src="images/로고.png"
+            src={logoPath}
             style={imagestyle}
           />
           <a href="index.html">스팀팩 </a>
@@ -41,13 +37,13 @@ const Header = () => (
           <p align='left'><a href="index.html">스팀팩 </a></p> */}
         <ul>
           <li className="current">
-            <a href="index.html">할인 정보</a>
+            <Link to="/">메인</Link>
           </li>
           <li>
             <Link to="/2018045141">게시판</Link>
           </li>
           <li>
-            <a href="recommendMBTI.html">MBTI별 게임 추천</a>
+          <Link to="/mbti">MBTI별 게임 추천</Link>
           </li>
           <li>
             <a href="ranking.html">
@@ -58,22 +54,7 @@ const Header = () => (
             <a href="no-sidebar.html">## 채우거나 지우기 </a>
           </li>
         </ul>
-        {/* <img
-          className="logo"
-          alt="logo"
-          src="images/로고.png"
-          style={imagestyle}
-        />
-        <a href="index.html" style={imagestyle}>
-          스팀팩
-        </a> */}
       </nav>
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.dropotron.min.js"></script>
-      <script src="assets/js/browser.min.js"></script>
-      <script src="assets/js/breakpoints.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <script src="assets/js/main.js"></script>
     </section>
 );
 
