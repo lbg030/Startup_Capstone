@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import '../assets/css/main.css';
+import logoPath from '../images/로고.png' 
 const imagestyle = {
   height: "10vh",
   width: "10vh",
@@ -14,7 +15,7 @@ const Header = () => (
           <img
             className="logo"
             alt="logo"
-            src="/images/로고.png"
+            src={logoPath}
             style={imagestyle}
           />
           <a href="index.html">스팀팩 </a>

@@ -15,6 +15,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import MbtiStart from './components/MbtiComponent/MbtiStart';
 import MbtiTest from './components/MbtiComponent/MbtiTest';
+import MbtiResult from './components/MbtiComponent/MbtiResult';
 //import './assets/css/main.css';
 function APP() {
   return (
@@ -40,6 +41,7 @@ function APP() {
               <Route exact path = "/boards/:boardseq/" component = {Boards} />
               <Route exact path = "/boards/:boardseq/:postseq/modify" render = {(props) => <PostModify userObj={{displayName : "sickbird"}} {...props} />} />
               <Route exact path = "/boards/:boardseq/:postseq" render = {(props) => <PostView userObj={{displayName : "sickbird"}} {...props} />} />
+              <Route exact path = "/mbti/result/:gameNum" component = {MbtiResult} />
               <Route exact path = "/mbti/test" component = {MbtiTest} />
               <Route exact path = "/mbti" component = {MbtiStart} />
               <Route exact path = "/" component = {MainContent} />

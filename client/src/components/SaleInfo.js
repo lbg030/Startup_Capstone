@@ -1,6 +1,8 @@
 import React from "react";
-
+import { Button } from 'antd';
+import 'antd/dist/antd.css';
 import '../assets/css/main.css';
+const saleButtonStyle = {color: 'white', backgroundColor:'#565656', width: 105, height: 35, fontSize: 16};
 const SaleInfo = () => (
   <section id="highlights" className="wrapper style3">
     <div className="title">할인 정보</div>
@@ -19,9 +21,9 @@ const SaleInfo = () => (
             </p>
             <ul className="actions">
               <li>
-                <a href="https://store.steampowered.com/app/367520/Hollow_Knight/" className="button style1" target='_blank'>
+                <Button href="https://store.steampowered.com/app/367520/Hollow_Knight/" style={saleButtonStyle} className="button style1" target='_blank'>
                   스팀 링크
-                </a>
+                </Button>
               </li>
             </ul>
           </section>
@@ -39,9 +41,9 @@ const SaleInfo = () => (
             </p>
             <ul className="actions">
               <li>
-                <a href="https://store.steampowered.com/app/1253920/Rogue_Legacy_2/" className="button style1" target='_blank'>
+                <Button href="https://store.steampowered.com/app/1253920/Rogue_Legacy_2/" style={saleButtonStyle} className="button style1" target='_blank'>
                   스팀 링크
-                </a>
+                </Button>
               </li>
             </ul>
           </section>
@@ -59,9 +61,9 @@ const SaleInfo = () => (
             </p>
             <ul className="actions">
               <li>
-                <a href="https://store.steampowered.com/app/1446780/MONSTER_HUNTER_RISE/" className="button style1" target='_blank'>
+                <Button href="https://store.steampowered.com/app/1446780/MONSTER_HUNTER_RISE/" style={saleButtonStyle} className="button style1" target='_blank'>
                   스팀 링크
-                </a>
+                </Button>
               </li>
             </ul>
           </section>
@@ -79,9 +81,9 @@ const SaleInfo = () => (
             </p>
             <ul className="actions">
               <li>
-                <a href="https://store.steampowered.com/app/646570/Slay_the_Spire/" className="button style1" target='_blank'>
+                <Button href="https://store.steampowered.com/app/646570/Slay_the_Spire/" style={saleButtonStyle} className="button style1" target='_blank'>
                   스팀 링크
-                </a>
+                </Button>
               </li>
             </ul>
           </section>
@@ -99,9 +101,9 @@ const SaleInfo = () => (
             </p>
             <ul className="actions">
               <li>
-                <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/" className="button style1" target='_blank'>
+                <Button href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/" style={saleButtonStyle} className="button style1" target='_blank'>
                   스팀 링크
-                </a>
+                </Button>
               </li>
             </ul>
           </section>
@@ -119,9 +121,9 @@ const SaleInfo = () => (
             </p>
             <ul className="actions">
               <li>
-                <a href="https://store.steampowered.com/app/1296610/Peglin/" className="button style1" target='_blank'>
+                <Button href="https://store.steampowered.com/app/1296610/Peglin/" style={saleButtonStyle} className="button style1" target='_blank'>
                   스팀 링크
-                </a>
+                </Button>
               </li>
             </ul>
           </section>
