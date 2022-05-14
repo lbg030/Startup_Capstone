@@ -121,7 +121,6 @@ input, select, textarea {
 		-webkit-transition: color .25s ease-in-out;
 		-ms-transition: color .25s ease-in-out;
 		transition: color .25s ease-in-out;
-		text-decoration: underline;
 		color: #717479;
 	}
 
@@ -1622,7 +1621,7 @@ input, select, textarea {
 		}
 
 /* Button */
-
+  /*
 	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
@@ -1745,14 +1744,14 @@ input, select, textarea {
 
 /* List */
 
-	ul {
+	/* ul {
 		list-style: disc;
 		padding-left: 1em;
-	}
+	} */
 
-		ul li {
+		/* ul li {
 			padding-left: 0.5em;
-		}
+		} */
 
 		ul.style2 {
 			list-style: none;
@@ -2061,7 +2060,7 @@ input, select, textarea {
 		justify-content: center;
 		position: relative;
 		height: 24em;
-		background: url("../../images/banner.jpg") center center;
+		background: url("images/banner.jpg") center center;
 		background-size: cover;
 		padding: 0;
 	}
