@@ -20,7 +20,7 @@ const Header = () => (
             src={logoPath}
             style={imagestyle}
           />
-          <a href="index.html">스팀팩 </a>
+          <a href="/">스팀팩 </a>
         </h1>
         <p>Steam Community Site</p>
       </div>
@@ -34,13 +34,13 @@ const Header = () => (
             href = "index.html"
             
           />
-          <p align='left'><a href="index.html">스팀팩 </a></p> */}
+          <p align='left'><a href="/">스팀팩 </a></p> */}
         <ul>
           <li className="current">
             <Link to="/">메인</Link>
           </li>
           <li>
-            <Link to="/2018045141">게시판</Link>
+            <Link to="boards/2018045141">게시판</Link>
           </li>
           <li>
           <Link to="/mbti">MBTI별 게임 추천</Link>
