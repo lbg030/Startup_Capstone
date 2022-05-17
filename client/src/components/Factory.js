@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { dbService, storageService } from "fbase";
+import { dbService, storageService } from "firebase-config";
 
 const Factory = ({ userObj }) => {
   const [title, setTitle] = useState("");

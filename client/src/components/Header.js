@@ -2,6 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import '../assets/css/main.css';
 import logoPath from '../images/로고.png' 
+import Login from './Main';
+
 const imagestyle = {
   height: "10vh",
   width: "10vh",
@@ -24,17 +26,8 @@ const Header = () => (
         </h1>
         <p>Steam Community Site</p>
       </div>
+      <Login/>
       <nav id="nav">
-      
-          {/* <img
-            src="images/로고.png"
-            style={imagestyle}
-            align = 'left'
-            display = 'flex'
-            href = "index.html"
-            
-          />
-          <p align='left'><a href="/">스팀팩 </a></p> */}
         <ul>
           <li className="current">
             <Link to="/">메인</Link>
@@ -54,6 +47,7 @@ const Header = () => (
             <a href="no-sidebar.html">## 채우거나 지우기 </a>
           </li>
         </ul>
+   
       </nav>
     </section>
 );

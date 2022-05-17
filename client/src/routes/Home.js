@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { dbService } from "fbase";
+import { dbService } from "firebase-config";
 import Career from "components/Career";
 import Factory from "components/Factory";
 

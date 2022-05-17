@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import MbtiStart from './components/MbtiComponent/MbtiStart';
 import MbtiTest from './components/MbtiComponent/MbtiTest';
 import MbtiResult from './components/MbtiComponent/MbtiResult';
+// import Login from './components/Main';
 //import './assets/css/main.css';
 function APP() {
   return (
