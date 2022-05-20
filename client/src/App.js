@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import MbtiStart from './components/MbtiComponent/MbtiStart';
 import MbtiTest from './components/MbtiComponent/MbtiTest';
 import MbtiResult from './components/MbtiComponent/MbtiResult';
+// import Login from './components/Main';
 //import './assets/css/main.css';
 function APP() {
   return (
@@ -34,6 +35,7 @@ function APP() {
             <Route exact path = "/" component = {SaleInfo} />
             <Route exact path = "/" component = {Intro} />
             <Switch>
+              
               {/* {
               userObj ? (<Route exact path = "/boards/:boardseq/write" render = {(props) => <PostWrite userObj={userObj} {...props} />}/>) : (<div>로그인 하세요</div>)
               } */}

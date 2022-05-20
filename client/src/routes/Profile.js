@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { authService, dbService } from "fbase";
+import { authService, dbService } from "firebase-config";
 import { useHistory } from "react-router-dom";
 
 export default ({ userObj, refreshUser }) => {
