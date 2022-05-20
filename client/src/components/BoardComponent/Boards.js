@@ -37,7 +37,7 @@ function Boards({match}) {
           <Col span={24}>
             <List
               dataSource={posts}
-              pagination={{pageSize: 2, total: posts.length}}
+              pagination={{pageSize: 10, total: posts.length}}
               itemLayout="vertical"
               size="large"
               renderItem={item =>

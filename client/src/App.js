@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import MbtiStart from './components/MbtiComponent/MbtiStart';
 import MbtiTest from './components/MbtiComponent/MbtiTest';
 import MbtiResult from './components/MbtiComponent/MbtiResult';
+import SteamRanking from './components/RankingComponent/SteamRanking';
 // import Login from './components/Main';
 //import './assets/css/main.css';
 function APP() {
@@ -46,7 +47,8 @@ function APP() {
               <Route exact path = "/mbti/result/:gameNum" component = {MbtiResult} />
               <Route exact path = "/mbti/test" component = {MbtiTest} />
               <Route exact path = "/mbti" component = {MbtiStart} />
-              <Route exact path = "/" component = {MainContent} />
+              <Route exact path = "/ranking" component = {SteamRanking} />
+              {/* <Route exact path = "/" component = {MainContent} /> */}
             </Switch>
             <Footer />
           </div>
