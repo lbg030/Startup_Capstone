@@ -26,7 +26,9 @@ const Header = () => (
         </h1>
         <p>Steam Community Site</p>
       </div>
-      <Login/>
+      {/* <div>
+        <Login/>
+      </div> */}
       <nav id="nav">
         <ul>
           <li className="current">
