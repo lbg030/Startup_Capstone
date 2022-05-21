@@ -22,34 +22,29 @@ const Header = () => (
             src={logoPath}
             style={imagestyle}
           />
-          <a href="/">스팀팩 </a>
+          <Link to="/">스팀팩</Link>
         </h1>
         <p>Steam Community Site</p>
       </div>
-      {/* <div>
-        <Login/>
-      </div> */}
+      {/* <Login/> */}
       <nav id="nav">
         <ul>
           <li className="current">
             <Link to="/">메인</Link>
           </li>
           <li>
-            <Link to="boards/2018045141">게시판</Link>
+            <Link to="/boards/2018045141">게시판</Link>
           </li>
           <li>
-          <Link to="/mbti">MBTI별 게임 추천</Link>
+            <Link to="/mbti">MBTI별 게임 추천</Link>
           </li>
           <li>
-            <a href="ranking.html">
-              스팀 트렌드 [## 게임 랭킹 ]
-            </a>
+            <Link to="/ranking">스팀게임 인기순위</Link>
           </li>
           <li>
-            <a href="no-sidebar.html">## 채우거나 지우기 </a>
+            ## 채우거나 지우기
           </li>
         </ul>
-   
       </nav>
     </section>
 );
