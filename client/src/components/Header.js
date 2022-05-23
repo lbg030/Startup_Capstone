@@ -42,7 +42,7 @@ const Header = () => (
             <Link to="/ranking">스팀게임 인기순위</Link>
           </li>
           <li>
-            ## 채우거나 지우기
+            <Link to="/login">로그인</Link>
           </li>
         </ul>
       </nav>

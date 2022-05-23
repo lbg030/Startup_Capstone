@@ -17,6 +17,9 @@ import MbtiStart from './components/MbtiComponent/MbtiStart';
 import MbtiTest from './components/MbtiComponent/MbtiTest';
 import MbtiResult from './components/MbtiComponent/MbtiResult';
 import SteamRanking from './components/RankingComponent/SteamRanking';
+import AuthForm from './components/AuthForm';
+import Home from './routes/Home';
+import Profile from './routes/Profile';
 // import Login from './components/Main';
 //import './assets/css/main.css';
 function APP() {
@@ -35,6 +38,8 @@ function APP() {
             <Header />
             <Route exact path = "/" component = {SaleInfo} />
             <Route exact path = "/" component = {Intro} />
+            <Route exact path = "/profile" component = {Profile} />
+            <Route exact path = "/profile" component = {Home} />
             <Switch>
               
               {/* {
@@ -48,6 +53,7 @@ function APP() {
               <Route exact path = "/mbti/test" component = {MbtiTest} />
               <Route exact path = "/mbti" component = {MbtiStart} />
               <Route exact path = "/ranking" component = {SteamRanking} />
+              <Route exact path = "/login" component = {AuthForm} />
               {/* <Route exact path = "/" component = {MainContent} /> */}
             </Switch>
             <Footer />

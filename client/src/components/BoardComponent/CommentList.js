@@ -41,7 +41,7 @@ function CommentList({userObj, boardseq, postseq}) {
   }, [element.submitting, boardseq, postseq]);
   const handleSubmit = async () => {
     if (!element.value) {
-      message.warning("내용을 입력해주세요.");
+      alert("내용을 입력해주세요.");
       return;
     }
     setElement({
@@ -53,7 +53,7 @@ function CommentList({userObj, boardseq, postseq}) {
       content: element.value,
       commented: moment().format('YYYY-MM-DD HH:mm'),
     }).then(() => {
-      message.success("등록 완료!");
+      alert("등록 완료!");
       setElement({
         ...element,
         submitting: false,

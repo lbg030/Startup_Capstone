@@ -1,23 +1,32 @@
 import React from "react";
-import { Button, List, Card, Row, Col, Divider, Image } from 'antd';
+import { Row, Col, Image } from 'antd';
+import { Link } from "react-router-dom";
 import 'antd/dist/antd.css';
 import '../assets/css/main.css';
-const saleButtonStyle = {color: 'white', backgroundColor:'#565656', width: 105, height: 35, fontSize: 16};
 const Intro = () => (
   <section id="intro" className="wrapper style1">
     <div className="title">BEST 게시글</div>
     <Row justify="center">
-      <Row gutter={[16, 24]} style={{width:"80%"}}>
+      <Row gutter={[16, 24]} style={{width:"100%"}}>
         <Col span={24}>
           <Row justify='space-between'>
-            <Col span={7}>
-              <Image width={300} src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcHkoB7%2FbtruqEHpTg1%2FxbFgIuHWM13KkfIU1FEsb1%2Fimg.png" preview={false}/>
+            <Col span={8}>
+              <Image width={480} src="https://cdn.akamai.steamstatic.com/steam/apps/578080/header.jpg" preview={false}/>
+              <Link>
+                <h1 style={{marginTop:"20px", fontSize:"25px"}}>배틀그라운드 설정 + 에임 꿀팁</h1>
+              </Link>
             </Col>
-            <Col span={7}>
-              <Image width={300} src="https://steamcdn-a.akamaihd.net/steam/apps/1296610/header.jpg?t=1592444837" preview={false}/>
+            <Col span={8}>
+              <Image width={480} src="https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg" preview={false}/>
+              <Link>
+                <h1 style={{marginTop:"20px", fontSize:"25px"}}>엘든링 초보자용 공략집</h1>
+              </Link>
             </Col>
-            <Col span={7}>
-              <Image width={300} src="https://cdn.cloudflare.steamstatic.com/steam/apps/460950/header.jpg?t=1622217167" preview={false}/>
+            <Col span={8}>
+              <Image width={480} src="https://cdn.cloudflare.steamstatic.com/steam/apps/1296610/header.jpg" preview={false}/>
+              <Link>
+                <h1 style={{marginTop:"20px", fontSize:"25px"}}>고블린이 폭탄 던지는 게임, 페글린 리뷰</h1>
+              </Link>
             </Col>
           </Row>
         </Col>
