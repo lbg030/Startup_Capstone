@@ -80,7 +80,7 @@ const qnaList = [
     ]
   },
   {
-    questString: '11. 고난이도 게임을 좋아하시나요?',
+    questString: '11. 난이도가 높은 게임을 좋아하시나요?',
     ansList: [
       { answer: 'a. 좋아합니다', type: [0,8] },
       { answer: 'b. 싫어합니다', type: [1,2,3,4,5,7,9,10,11] },
